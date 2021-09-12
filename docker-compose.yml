@@ -12,7 +12,7 @@ services:
                     - "$BITCOIN_P2P_PORT:$BITCOIN_P2P_PORT"
                 networks:
                     default:
-                        ipv4_address: $BITCOIN_IP
+                        ipv4_address: 10.21.21.8
         lnd:
                 container_name: lnd
                 image: lightninglabs/lnd:v0.13.1-beta@sha256:f26ddbbea3f7bad45d994e6258b8198acaebf65e575eedf2a566d04f0c1fb9d9
@@ -25,11 +25,11 @@ services:
                 stop_grace_period: 5m30s
                 ports:
                     - "9735:9735"
-                    - "$LND_REST_PORT:$LND_REST_PORT"
-                    - "$LND_GRPC_PORT:$LND_GRPC_PORT"
+                    - "8080:8080"
+                    - "10009:10009"
                 networks:
                     default:
-                        ipv4_address: $LND_IP
+                        ipv4_address: 10.21.21.9
 
 
 networks:
@@ -38,7 +38,7 @@ networks:
       ipam:
           driver: default
           config:
-              - subnet: "$NETWORK_IP/24"
+              - subnet: "10.21.21.0/24"
 
 volumes:
     jwt-public-key:
