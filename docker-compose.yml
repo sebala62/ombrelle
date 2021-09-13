@@ -9,7 +9,7 @@ services:
                 restart: on-failure
                 stop_grace_period: 15m30s
                 ports:
-                    - "$BITCOIN_P2P_PORT:$BITCOIN_P2P_PORT"
+                    - "8333:8333"
                 networks:
                     default:
                         ipv4_address: 10.21.21.8
