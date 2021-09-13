@@ -5,7 +5,7 @@ services:
                 container_name: bitcoin
                 image: lncm/bitcoind:v0.21.1@sha256:5bedb46d698de16c59e9e43d31485d0d82239bd437d62ac7cf47ebb633214f37
                 volumes:
-                        - bitcoin:/data/.bitcoin
+                        - /tmp/bitcoin:/data/.bitcoin
                 restart: on-failure
                 stop_grace_period: 15m30s
                 ports:
@@ -18,7 +18,7 @@ services:
                 image: lightninglabs/lnd:v0.13.1-beta@sha256:f26ddbbea3f7bad45d994e6258b8198acaebf65e575eedf2a566d04f0c1fb9d9
                 user: 1000:1000
                 volumes:
-                        - lnd:/data/.lnd
+                        - /tmp/lnd:/data/.lnd
                 environment:
                   HOME: /data
                 restart: on-failure
