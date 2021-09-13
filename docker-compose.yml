@@ -15,7 +15,7 @@ services:
                         ipv4_address: 10.21.21.8
         lnd:
                 container_name: lnd
-                image: lightninglabs/lnd:v0.13.1-beta@sha256:f26ddbbea3f7bad45d994e6258b8198acaebf65e575eedf2a566d04f0c1fb9d9
+                image: lightninglabs/lnd:v0.13.2-beta@sha256:300220e852af0da3ece55faf27c7d36c15857eb04a6db9ea1bd181ca35b344ee
                 depends_on: [ bitcoin ]
                 user: 1000:1000
                 volumes:
